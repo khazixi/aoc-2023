@@ -31,7 +31,6 @@ checkList lst
 main = do
   handler <- openFile "2.txt" ReadMode
   contents <- hGetContents handler
-  let a = parser contents
 
   -- Part 1
   let part1 = sum . map fst . filter ( all checkList . snd ) . zip [1..] $ parser contents
@@ -41,5 +40,3 @@ main = do
 
   print part1
   print part2
-
-
